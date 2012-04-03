@@ -1,0 +1,33 @@
+<h1>Listing analitics</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Goods</th>
+    <th>Counts</th>
+    <th>Comments</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @analitics.each do |analitic| %>
+  <tr>
+    <td><%= analitic.name %></td>
+    <td><%= analitic.date %></td>
+    <td><%= analitic.goods %></td>
+    <td><%= analitic.counts %></td>
+    <td><%= analitic.comments %></td>
+    <td><%= analitic.total %></td>
+    <td><%= link_to 'Show', analitic %></td>
+    <td><%= link_to 'Edit', edit_analitic_path(analitic) %></td>
+    <td><%= link_to 'Destroy', analitic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Analitic', new_analitic_path %>

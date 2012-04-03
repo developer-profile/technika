@@ -1,0 +1,37 @@
+<%= form_for(@logistic) do |f| %>
+  <% if @logistic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@logistic.errors.count, "error") %> prohibited this logistic from being saved:</h2>
+
+      <ul>
+      <% @logistic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :logistic %><br />
+    <%= f.text_field :logistic %>
+  </div>
+  <div class="field">
+    <%= f.label :docnumber %><br />
+    <%= f.number_field :docnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :client %><br />
+    <%= f.text_field :client %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

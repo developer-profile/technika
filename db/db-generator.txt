@@ -1,0 +1,5 @@
+rails generate scaffold Analitic name:string date:date goods:text counts:integer comments:text total:integer
+rails generate scaffold Logistic date:date logistic:string docnumber:integer comments:text client:string
+rails generate scaffold Invoice categoryid:integer number:integer date:date goods:text price:integer sale:integer total:integer comments:text
+rails generate scaffold Categorie categoryid:integer name:string price:integer weight:integer volume:integer comments:text
+rails generate scaffold Client count:integer name:string contact:text comments:text sale:integer

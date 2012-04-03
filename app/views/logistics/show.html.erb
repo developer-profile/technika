@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @logistic.date %>
+</p>
+
+<p>
+  <b>Logistic:</b>
+  <%= @logistic.logistic %>
+</p>
+
+<p>
+  <b>Docnumber:</b>
+  <%= @logistic.docnumber %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @logistic.comments %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @logistic.client %>
+</p>
+
+
+<%= link_to 'Edit', edit_logistic_path(@logistic) %> |
+<%= link_to 'Back', logistics_path %>

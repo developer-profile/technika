@@ -1,0 +1,41 @@
+<%= form_for(@analitic) do |f| %>
+  <% if @analitic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@analitic.errors.count, "error") %> prohibited this analitic from being saved:</h2>
+
+      <ul>
+      <% @analitic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :goods %><br />
+    <%= f.text_area :goods %>
+  </div>
+  <div class="field">
+    <%= f.label :counts %><br />
+    <%= f.number_field :counts %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= f.number_field :total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

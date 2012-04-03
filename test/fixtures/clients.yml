@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  count: 1
+  name: MyString
+  contact: MyText
+  comments: MyText
+  sale: 1
+
+two:
+  count: 1
+  name: MyString
+  contact: MyText
+  comments: MyText
+  sale: 1

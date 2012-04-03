@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @analitic.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @analitic.date %>
+</p>
+
+<p>
+  <b>Goods:</b>
+  <%= @analitic.goods %>
+</p>
+
+<p>
+  <b>Counts:</b>
+  <%= @analitic.counts %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @analitic.comments %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @analitic.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_analitic_path(@analitic) %> |
+<%= link_to 'Back', analitics_path %>

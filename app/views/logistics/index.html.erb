@@ -1,0 +1,31 @@
+<h1>Listing logistics</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Logistic</th>
+    <th>Docnumber</th>
+    <th>Comments</th>
+    <th>Client</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @logistics.each do |logistic| %>
+  <tr>
+    <td><%= logistic.date %></td>
+    <td><%= logistic.logistic %></td>
+    <td><%= logistic.docnumber %></td>
+    <td><%= logistic.comments %></td>
+    <td><%= logistic.client %></td>
+    <td><%= link_to 'Show', logistic %></td>
+    <td><%= link_to 'Edit', edit_logistic_path(logistic) %></td>
+    <td><%= link_to 'Destroy', logistic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Logistic', new_logistic_path %>

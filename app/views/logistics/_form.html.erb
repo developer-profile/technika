@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label 'Дата' %><br />
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :logistic %><br />
+    <%= f.label 'Транспортная компания' %><br />
     <%= f.text_field :logistic %>
   </div>
   <div class="field">
-    <%= f.label :docnumber %><br />
+    <%= f.label 'Номер накладной' %><br />
     <%= f.number_field :docnumber %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br />
+    <%= f.label 'Комментарии' %><br />
     <%= f.text_area :comments %>
   </div>
   <div class="field">
-    <%= f.label :client %><br />
+    <%= f.label 'Контрагент' %><br />
     <%= f.text_field :client %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Сохранить' %>
   </div>
 <% end %>

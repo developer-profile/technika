@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Date:</b>
+  <b>Дата:</b>
   <%= @logistic.date %>
 </p>
 
 <p>
-  <b>Logistic:</b>
+  <b>Транспортная компания:</b>
   <%= @logistic.logistic %>
 </p>
 
 <p>
-  <b>Docnumber:</b>
+  <b>Номер накладной:</b>
   <%= @logistic.docnumber %>
 </p>
 
 <p>
-  <b>Comments:</b>
+  <b>Комментарии:</b>
   <%= @logistic.comments %>
 </p>
 
 <p>
-  <b>Client:</b>
+  <b>Клиент:</b>
   <%= @logistic.client %>
 </p>
 
 
-<%= link_to 'Edit', edit_logistic_path(@logistic) %> |
-<%= link_to 'Back', logistics_path %>
+<%= link_to 'Редактирование', edit_logistic_path(@logistic) %> |
+<%= link_to 'Назад', logistics_path %>

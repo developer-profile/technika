@@ -1,5 +1,9 @@
 Technika::Application.routes.draw do
   
+  resources :products
+
+  get "store/index"
+
   resources :clients
 
   resources :categories
@@ -21,9 +25,10 @@ Technika::Application.routes.draw do
   # get "static_pages/contact"
   
   match '/', to: 'static_pages#home'
-   match '/tasks', to: 'static_pages#home'
+  match '/tasks', to: 'static_pages#home'
+  match '/store', to: 'products#index'
   
-  root to: 'static_pages#home'
+  root to: 'products#index'
 
 
   # The priority is based upon order of creation:

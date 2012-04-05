@@ -1,15 +1,14 @@
-<h1>Listing invoices</h1>
+<h1>Журнал счетов</h1>
 
 <table>
   <tr>
-    <th>Categoryid</th>
-    <th>Number</th>
-    <th>Date</th>
-    <th>Goods</th>
-    <th>Price</th>
-    <th>Sale</th>
-    <th>Total</th>
-    <th>Comments</th>
+    <th>Номер счета</th>
+    <th>Дата</th>
+    <th>Список товаров</th>
+    <th>Цена</th>
+    <th>Скидка</th>
+    <th>Сумма</th>
+    <th>Комментарии</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,13 +24,13 @@
     <td><%= invoice.sale %></td>
     <td><%= invoice.total %></td>
     <td><%= invoice.comments %></td>
-    <td><%= link_to 'Show', invoice %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-    <td><%= link_to 'Destroy', invoice, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Просмотр', invoice %></td>
+    <td><%= link_to 'Редактирование', edit_invoice_path(invoice) %></td>
+    <td><%= link_to 'Удаление', invoice, confirm: 'Вы уверены?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to 'Новый счёт', new_invoice_path %>

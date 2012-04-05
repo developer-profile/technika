@@ -16,34 +16,34 @@
     <%= f.number_field :categoryid %>
   </div>
   <div class="field">
-    <%= f.label :number %><br />
+    <%= f.label 'Номер счета' %><br />
     <%= f.number_field :number %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label 'Дата' %><br />
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :goods %><br />
+    <%= f.label 'Товары' %><br />
     <%= f.text_area :goods %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label 'Цена' %><br />
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :sale %><br />
+    <%= f.label 'Скидка' %><br />
     <%= f.number_field :sale %>
   </div>
   <div class="field">
-    <%= f.label :total %><br />
+    <%= f.label 'Сумма' %><br />
     <%= f.number_field :total %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br />
+    <%= f.label 'Комментарии' %><br />
     <%= f.text_area :comments %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Сохранить' %>
   </div>
 <% end %>

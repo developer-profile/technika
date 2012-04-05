@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Count:</b>
+  <b>Номер:</b>
   <%= @client.count %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>Наименование контрагента:</b>
   <%= @client.name %>
 </p>
 
 <p>
-  <b>Contact:</b>
+  <b>Контакты:</b>
   <%= @client.contact %>
 </p>
 
 <p>
-  <b>Comments:</b>
+  <b>Комментарии:</b>
   <%= @client.comments %>
 </p>
 
 <p>
-  <b>Sale:</b>
+  <b>Скидки:</b>
   <%= @client.sale %>
 </p>
 
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Редактирование', edit_client_path(@client) %> |
+<%= link_to 'Назад', clients_path %>

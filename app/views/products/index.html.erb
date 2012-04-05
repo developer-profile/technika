@@ -1,7 +1,7 @@
 
 <h1>Список товаров</h1>
 
-<table>
+<table class="table table-striped">
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 

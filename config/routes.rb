@@ -1,5 +1,7 @@
 Technika::Application.routes.draw do
   
+  resources :tasks
+
   resources :products
 
   get "store/index"
@@ -25,7 +27,7 @@ Technika::Application.routes.draw do
   # get "static_pages/contact"
   
   match '/', to: 'static_pages#home'
-  match '/tasks', to: 'static_pages#home'
+  match '/tasks', to: 'tasks#index'
   match '/store', to: 'products#index'
   
   root to: 'products#index'

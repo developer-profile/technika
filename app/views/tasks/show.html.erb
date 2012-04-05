@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Наименование:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Описание:</b>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Крайний срок исполнения:</b>
+  <%= @task.deadline %>
+</p>
+
+<p>
+  <b>Комментарий:</b>
+  <%= @task.comment %>
+</p>
+
+<p>
+  <b>Ответственное лицо:</b>
+  <%= @task.person %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_task_path(@task) %> |
+<%= link_to 'Назад', tasks_path %>

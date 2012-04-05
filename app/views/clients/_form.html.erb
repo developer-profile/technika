@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :count %><br />
+    <%= f.label 'Номер' %><br />
     <%= f.number_field :count %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label 'Наименование' %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :contact %><br />
+    <%= f.label 'Контакты' %><br />
     <%= f.text_area :contact %>
   </div>
   <div class="field">
-    <%= f.label :comments %><br />
+    <%= f.label 'Комментарии' %><br />
     <%= f.text_area :comments %>
   </div>
   <div class="field">
-    <%= f.label :sale %><br />
+    <%= f.label 'Скидка' %><br />
     <%= f.number_field :sale %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Сохранить' %>
   </div>
 <% end %>

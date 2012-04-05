@@ -26,6 +26,7 @@ gem 'therubyracer', :platform => :ruby
 
 
 gem 'bootstrap-sass'
+gem 'bootstrap_forms'
 
 # gem 'twitter-bootstrap-rails' 
 # To use ActiveModel has_secure_password

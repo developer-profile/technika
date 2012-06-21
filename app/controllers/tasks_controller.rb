@@ -80,4 +80,11 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def live_search
+  @tasks = Task.find_latest params[:q]
+  render :layout => false
+  end
+  
+
 end

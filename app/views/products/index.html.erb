@@ -1,6 +1,18 @@
 
 <h1>Список товаров</h1>
 
+<%= form_tag products_path, method: :get do %>
+	<p>
+		
+		<%= text_field_tag :search, params[:search] %>
+		<%= button_tag "Search", name: nil %>
+		
+	</p>
+<% end %>
+
+<p><%= link_to "Advanced search", new_search_path %></p>
+
+	
 <table class="table table-striped">
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">

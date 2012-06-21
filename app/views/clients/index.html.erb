@@ -1,5 +1,10 @@
 <h1>Список контрагентов</h1>
 
+<form id="live-search-form" method="get" action="<%= client_path %>">
+  <input id="big-search-box" name="q" type="text"/>
+</form>
+<div id="live-search-results"></div>
+
 <table class="table table-striped">
   <tr>
     <th>Номер</th>

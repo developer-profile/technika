@@ -31,6 +31,7 @@ Technika::Application.routes.draw do
   match '/', to: 'tasks#index'
   match '/tasks', to: 'tasks#index'
   match '/store', to: 'products#index'
+  match '/clients', to: 'clients#index'
   
   root to: 'tasks#index'
 

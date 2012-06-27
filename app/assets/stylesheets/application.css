@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
 */
+
+th .asc {
+	background-image: url('assets/up_arrow.gif')
+}
+
+
+th .desc {
+	background-image: url('assets/down_arrow.gif')
+}

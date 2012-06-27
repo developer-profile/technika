@@ -1,8 +1,9 @@
 class ClientsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    @clients = Client.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,4 +86,19 @@ class ClientsController < ApplicationController
   @clients = Client.find(params[:q])
   render :layout => false
   end
+  
+  private
+  
+  def sort_column
+    
+    Client.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    
+  end
+  
+  def sort_direction
+    
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    
+  end
+    
 end

@@ -1,17 +1,17 @@
 <h1>Список контрагентов</h1>
 
-<form id="live-search-form" method="get" action="<%= client_path %>">
+<form id="live-search-form" method="get" action="<%= clients_path %>">
   <input id="big-search-box" name="q" type="text"/>
 </form>
 <div id="live-search-results"></div>
 
 <table class="table table-striped">
   <tr>
-    <th>Номер</th>
-    <th>Имя</th>
-    <th>Контактные данные</th>
-    <th>Комментарии</th>
-    <th>Скидка</th>
+    <th><%= sortable "count", "Номер" %></th>
+    <th><%= sortable "name", "Имя" %></th>
+    <th><%= sortable "contact", "Контактные данные" %></th>
+    <th><%= sortable "comments", "Комментарии" %></th>
+    <th><%= sortable "sale", "Скидка" %></th>
     <th></th>
     <th></th>
     <th></th>

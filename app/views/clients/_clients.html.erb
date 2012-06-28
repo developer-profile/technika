@@ -1,0 +1,27 @@
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+<table class="table table-striped">
+  <tr>
+    <th><%= sortable "count", "Номер" %></th>
+    <th><%= sortable "name", "Имя" %></th>
+    <th><%= sortable "contact", "Контактные данные" %></th>
+    <th><%= sortable "comments", "Комментарии" %></th>
+    <th><%= sortable "sale", "Скидка" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.count %></td>
+    <td><%= client.name %></td>
+    <td><%= client.contact %></td>
+    <td><%= client.comments %></td>
+    <td><%= client.sale %></td>
+    <td><%= link_to 'Просмотр', client %></td>
+    <td><%= link_to 'Редактирование', edit_client_path(client) %></td>
+    <td><%= link_to 'Удаление', client, confirm: 'Вы уверены?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

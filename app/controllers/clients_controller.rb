@@ -3,10 +3,11 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(sort_column + " " + sort_direction)
+    @clients = Client.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js   # index.js.erb
       format.json { render json: @clients }
     end
   end

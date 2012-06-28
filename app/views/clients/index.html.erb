@@ -1,36 +1,18 @@
 <h1>Список контрагентов</h1>
 
-<form id="live-search-form" method="get" action="<%= clients_path %>">
-  <input id="big-search-box" name="q" type="text"/>
-</form>
-<div id="live-search-results"></div>
+<%= form_tag clients_path, :method => 'get', :id => "clients_search" do %>
 
-<table class="table table-striped">
-  <tr>
-    <th><%= sortable "count", "Номер" %></th>
-    <th><%= sortable "name", "Имя" %></th>
-    <th><%= sortable "contact", "Контактные данные" %></th>
-    <th><%= sortable "comments", "Комментарии" %></th>
-    <th><%= sortable "sale", "Скидка" %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @clients.each do |client| %>
-  <tr>
-    <td><%= client.count %></td>
-    <td><%= client.name %></td>
-    <td><%= client.contact %></td>
-    <td><%= client.comments %></td>
-    <td><%= client.sale %></td>
-    <td><%= link_to 'Просмотр', client %></td>
-    <td><%= link_to 'Редактирование', edit_client_path(client) %></td>
-    <td><%= link_to 'Удаление', client, confirm: 'Вы уверены?', method: :delete %></td>
-  </tr>
+  <p>
+    <%= text_field_tag :search, params[:search], :id => "keyword" %>
+    <%= submit_tag "Искать", :name => nil %>
+  </p>
+  <div id="clients"><%= render 'clients' %></div>
 <% end %>
-</table>
 
-<br />
+
+
+
+
+<%= will_paginate @clients %>
 
 <%= link_to 'Добавить контрагента', new_client_path %>

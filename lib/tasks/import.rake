@@ -1,9 +1,15 @@
-require 'fastercsv'
-namespace :import => :environment do
-   task :questions do
-     FasterCSV.foreach("../../public/blank2011.csv") do |row|
-           q = Question.create(:question=>row[0], etc...)
-           PossibleAnswer.create(:question=>q, :answer=>row[1], etc....) #providing PossibleAnswer belongs_to Question
-      end
-   end 
+#lib/tasks/import.rake
+desc "Imports a CSV file into an ActiveRecord table"
+task :csv_model_import, :filename, :model, :argument => :environment do |task,args|
+  lines = File.new(args[:filename]).readlines
+  header = lines.shift.strip
+  keys = header.split(',')
+  lines.each do |line|
+    params = {}
+    values = line.strip.split(',')
+    keys.each_with_index do |key,i|
+      params[key] = values[i]
+    end
+    Module.const_get(args[:model]).create(params)
+  end
 end

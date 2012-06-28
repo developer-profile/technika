@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'therubyracer', :platform => :ruby
+gem 'will_paginate'
 
 
 

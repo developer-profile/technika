@@ -83,10 +83,7 @@ class ClientsController < ApplicationController
     end
   end
   
-  def live_search
-  @clients = Client.find(params[:q])
-  render :layout => false
-  end
+
   
   private
   

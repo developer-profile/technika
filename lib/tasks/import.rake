@@ -1,15 +1,22 @@
-#lib/tasks/import.rake
-desc "Imports a CSV file into an ActiveRecord table"
-task :csv_model_import, :filename, :model, :argument => :environment do |task,args|
-  lines = File.new(args[:filename]).readlines
-  header = lines.shift.strip
-  keys = header.split(',')
-  lines.each do |line|
-    params = {}
-    values = line.strip.split(',')
-    keys.each_with_index do |key,i|
-      params[key] = values[i]
-    end
-    Module.const_get(args[:model]).create(params)
+namespace :db do
+  desc "load user data from csv"
+  task [:load_csv_data] => [:environment] do
+  require 'CSV'
+  
+  DEFAULT_OPTIONS = { :col_sep => ";", 
+                      :row_sep => :auto, 
+                      :quote_char => "'", 
+                      :converters => nil, 
+                      :unconverted_fields => nil, 
+                      :headers => false, 
+                      :return_headers => false, 
+                      :header_converters => nil, 
+                      :skip_blanks => false, 
+                      :force_quotes => false }.freeze
+ 
+  CSV.foreach("lib/tasks/blank2011nlist.csv", DEFAULT_OPTIONS) do |row|
+  Product.create(:title => row[0], :description => row[1], :price => row[2])
+  end
+   
   end
 end

@@ -1,14 +1,17 @@
 class ProductsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js # index.js.erb
       format.json { render json: @products }
     end
   end
+
 
   # GET /products/1
   # GET /products/1.json
@@ -80,4 +83,19 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+  def sort_column
+    
+    Client.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    
+  end
+  
+  def sort_direction
+    
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    
+  end
+
 end

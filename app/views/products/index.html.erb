@@ -1,45 +1,20 @@
 
 <h1>Список товаров</h1>
 
-<%= form_tag products_path, method: :get do %>
-	<p>
-		
-		<%= text_field_tag :search, params[:search] %>
-		<%= button_tag "Search", name: nil %>
-		
-	</p>
+<%= form_tag products_path, :method => 'get', :id => "products_search" do %>
+
+  <p>
+    <%= text_field_tag :search, params[:search], :id => "keyword" %>
+    <%= submit_tag "Искать", :name => nil %>
+  </p>
+  <div id="products"><%= render 'products' %></div>
 <% end %>
 
-<p><%= link_to "Advanced search", new_search_path %></p>
 
-	
-<table class="table table-striped">
-<% @products.each do |product| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
-    <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
-    </td>
 
-    <td class="list_description">
-      <dl>
-        <dt><%= product.title %></dt>
-        <dd><%= truncate(strip_tags(product.description),
-               length: 80) %></dd>
-      </dl>
-    </td>
 
-    <td class="list_actions">
-      <%= link_to 'Просмотр', product %><br/>
-      <%= link_to 'Редактирование', edit_product_path(product) %><br/>
-      <%= link_to 'Удаление', product, 
-                  confirm: 'Вы уверены?',
-                  method: :delete %>
-    </td>
-  </tr>
-<% end %>
-</table>
-
+<%= will_paginate @products %>
 <br />
 
 <%= link_to 'Добавить товар', new_product_path %>

@@ -3,17 +3,17 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   # Ajax sorting and pagination on click
-  $('#clients td.sortable a, #clients .pagination a').live('click', ->
+  $('#products td.sortable a, #products .pagination a').live('click', ->
     $.getScript(this.href)
     false
   )
   # Ajax search on submit
-  $('#clients_search').submit( ->
+  $('#products_search').submit( ->
     $.get(this.action, $(this).serialize(), null, 'script')
     false
   )
   # Ajax search on keyup
-  $('#clients_search #keyword').keyup( ->
-    $.get($("#clients_search").attr("action"), $("#clients_search").serialize(), null, 'script')
+  $('#products_search #keyword').keyup( ->
+    $.get($("#products_search").attr("action"), $("#products_search").serialize(), null, 'script')
     false
   )

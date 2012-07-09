@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,7 +24,8 @@ gem 'jquery-rails'
 gem 'therubyracer', :platform => :ruby
 gem 'will_paginate'
 
-gem 'fastercsv'
+gem 'chosen-rails'
+gem 'formtastic'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_forms'

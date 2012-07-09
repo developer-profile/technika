@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :image_url, :price, :title
+  attr_accessible :categoryid, :title, :description, :image_url, :price, :title
   
   def self.search(search)
     if search

@@ -12,12 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :categoryid %><br />
-    <%= f.number_field :categoryid %>
-  </div>
-  <div class="field">
     <%= f.label 'Номер счета' %><br />
-    <%= f.number_field :number %>
+    <%= f.number_field :number, {:value => Invoice.count() + 1} %>
   </div>
   <div class="field">
     <%= f.label 'Дата' %><br />
@@ -25,23 +21,23 @@
   </div>
   <div class="field">
     <%= f.label 'Товары' %><br />
-    <%= f.text_area :goods %>
+    <%= f.collection_select :goods, Product.order(:id), :title, :title, {}, {multiple:true, :id=>"goods", :style=>"width:100%;"} %>
   </div>
   <div class="field">
     <%= f.label 'Цена' %><br />
-    <%= f.number_field :price %>
+    <%= f.number_field :price,{ :id => "price"} %>
   </div>
   <div class="field">
     <%= f.label 'Скидка' %><br />
-    <%= f.number_field :sale %>
+    <%= f.number_field :sale,{ :id => "sale"} %>
   </div>
   <div class="field">
     <%= f.label 'Сумма' %><br />
-    <%= f.number_field :total %>
+    <%= f.number_field :total,{ :id => "total"} %>
   </div>
   <div class="field">
     <%= f.label 'Комментарии' %><br />
-    <%= f.text_area :comments %>
+    <%= f.text_area :comments,{ :id => "comments"} %>
   </div>
   <div class="actions">
     <%= f.submit 'Сохранить' %>

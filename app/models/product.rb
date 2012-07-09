@@ -3,7 +3,8 @@ class Product < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      search = search.downcase
+      where('LOWER(title) LIKE ?', "%#{search}%")
     else
       scoped
     end

@@ -25,7 +25,8 @@ gem 'jquery-rails'
 gem 'therubyracer', :platform => :ruby
 gem 'will_paginate'
 
-gem 'fastercsv'
+gem 'chosen-rails'
+gem 'formtastic'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_forms'

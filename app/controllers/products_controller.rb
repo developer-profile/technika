@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
       format.html # index.html.erb
       format.js # index.js.erb
       format.json { render json: @products }
+      format.csv { send_data @products.to_csv } # index.js.erb
+      format.xls # { send_data @products.to_csv(col_sep: "\t") } # index.js.erb
     end
   end
 

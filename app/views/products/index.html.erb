@@ -1,6 +1,10 @@
 
 <h1>Список товаров</h1>
 
+Загрузить в формате:
+	<%= link_to "Excel", products_path(format: "xls") %>
+	<%= link_to "CSV", products_path(format: "csv") %>
+ 
 <%= form_tag products_path, :method => 'get', :id => "products_search" do %>
 
   <p>

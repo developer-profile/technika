@@ -24,6 +24,8 @@ Technika::Application.routes.draw do
   match '/store', to: 'products#index'
   match '/products', to: 'products#index'
   match '/clients', to: 'clients#index'
+  match 'xls', to: 'products/products.xls'
+  match 'csv', to: 'products/products.csv'
   
   # get "static_pages/home"
   # get "static_pages/help"
@@ -32,7 +34,7 @@ Technika::Application.routes.draw do
   
 
   
-  root to: 'tasks#index'
+  root :to => 'tasks#index'
 
 
   # The priority is based upon order of creation:

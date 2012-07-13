@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709132238) do
+ActiveRecord::Schema.define(:version => 20120712132429) do
 
   create_table "analitics", :force => true do |t|
     t.string   "name"
@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(:version => 20120709132238) do
     t.integer  "docnumber"
     t.text     "comments"
     t.string   "client"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "payments", :force => true do |t|
+    t.string   "client"
+    t.text     "goods"
+    t.integer  "goodsprice"
+    t.integer  "sale"
+    t.integer  "totals"
+    t.text     "comments"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

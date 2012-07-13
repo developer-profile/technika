@@ -1,0 +1,20 @@
+<%= form_for(@payment) do |f| %>
+  <% if @payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% @payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= yield f %>
+  
+  <div class="actions">
+    <%= f.submit "Далее"%> or <%= link_to "Пропустить", next_wizard_path %>
+  </div> 
+  
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client: MyString
+  goods: MyText
+  goodsprice: 1
+  sale: 1
+  totals: 1
+  comments: MyText
+
+two:
+  client: MyString
+  goods: MyText
+  goodsprice: 1
+  sale: 1
+  totals: 1
+  comments: MyText

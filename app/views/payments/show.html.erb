@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @payment.client %>
+</p>
+
+<p>
+  <b>Goods:</b>
+  <%= @payment.goods %>
+</p>
+
+<p>
+  <b>Goodsprice:</b>
+  <%= @payment.goodsprice %>
+</p>
+
+<p>
+  <b>Sale:</b>
+  <%= @payment.sale %>
+</p>
+
+<p>
+  <b>Totals:</b>
+  <%= @payment.totals %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @payment.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

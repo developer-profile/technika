@@ -1,5 +1,7 @@
 Technika::Application.routes.draw do
   
+  resources :payments
+
   resources :tasks
 
   resources :products
@@ -15,6 +17,10 @@ Technika::Application.routes.draw do
   resources :analitics
   
   resources :searches
+  
+  resources :user_steps
+  
+  resources :payment_steps
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
